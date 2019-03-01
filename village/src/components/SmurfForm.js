@@ -1,53 +1,80 @@
 import React, { Component } from 'react';
 
+
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      info : {
       name: '',
       age: '',
       height: ''
+      }
     };
   }
 
-  addSmurf = event => {
-    event.preventDefault();
-    // add code to create the smurf using the api
 
-    this.setState({
-      name: '',
-      age: '',
-      height: ''
-    });
+  handleInputChange = (e)=>{
+    e.persist();
+  this.setState(prevState => (
+      {
+      info: {
+        ...prevState.info,
+        [e.target.name]: e.target.value
+      }
+    }));
   }
 
-  handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
 
+  addSmurfs = e =>{
+    this.setState({
+        info : {
+            name : "",
+            age :"",
+            height:""
+        }
+    })
+    this.props.addSmurf(e,this.state.info)
+    window.location.reload();
+}
   render() {
     return (
       <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
-          <input
+      <form onSubmit={this.addSmurfs}>
+      <div class="ui inverted segment">
+      <div class="ui inverted form">
+        <div class="two fields">
+          <div class="field">
+            <label> Name</label>
+            <input
             onChange={this.handleInputChange}
             placeholder="name"
-            value={this.state.name}
+            value={this.state.info.name}
             name="name"
           />
-          <input
+          </div>
+          <div class="field">
+            <label>Age</label>
+            <input
             onChange={this.handleInputChange}
             placeholder="age"
-            value={this.state.age}
+            value={this.state.info.age}
             name="age"
           />
+          </div>
+          <div class="field">
+          <label>Height</label>
           <input
-            onChange={this.handleInputChange}
-            placeholder="height"
-            value={this.state.height}
-            name="height"
-          />
-          <button type="submit">Add to the village</button>
+          onChange={this.handleInputChange}
+          placeholder="height"
+          value={this.state.info.height}
+          name="height"
+        />
+        </div>
+        </div>
+      </div>
+      <button class="ui submit button" type="submit" >Add to The village</button>
+    </div>
         </form>
       </div>
     );

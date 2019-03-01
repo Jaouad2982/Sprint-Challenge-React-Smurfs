@@ -1,0 +1,17 @@
+.Smurf{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: inline-block;
+    margin: 1% 1% 1% 1%;
+    box-shadow: 8px 10px #2e1b5b;
+    padding: 2% 2%;
+}
+
+
+
+.contentII{
+    color:#8275a0;
+    font-family: 'Pacifico', cursive;
+}
+

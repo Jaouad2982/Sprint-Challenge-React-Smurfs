@@ -5,7 +5,7 @@ import React from "react"
 const Home =()=>{
     return (
 
-        <div>
+        <div style={{fontSize:"4rem",marginTop:"20%"}}>
                 Welcome to the smurfy Village
         </div>
     )

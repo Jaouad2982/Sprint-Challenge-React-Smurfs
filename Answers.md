@@ -24,7 +24,7 @@ HTTP stands for hypertext transfer protocol
 CRUD stands for create read update delete
 
 4.
-get, post, delete, put
+get, post, delete, put, patch
 
 5.
 Axios,Fetch, JQuery methods

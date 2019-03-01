@@ -35,7 +35,7 @@ class SmurfForm extends Component {
         }
     })
     this.props.addSmurf(e,this.state.info)
-    window.location.reload();
+    //window.location.reload();
 }
   render() {
     return (
